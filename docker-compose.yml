@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  mongo:
+    container_name: movie-mongo
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: 123456
+    ports:
+      - 27017:27017
+    volumes:
+      - ./MongoDB/data/db:/data/db
+      
+  node:
+    container_name: movie-node
+    build:
+      context: NodeServer
+    expose: 
+      - 8124
+    ports: 
+        - 8124:8124
+    volumes:
+        - ./NodeServer/:/anthonyz/movie-app/app
+
+    depends_on:
+        - mongo
+    tty: true
+    stdin_open: true

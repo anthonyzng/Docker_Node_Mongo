@@ -1,0 +1,19 @@
+{
+  "name": "c",
+  "version": "1.0.0",
+  "description": "movie application",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "anthonyzng",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "joi": "^17.2.1",
+    "mongodb": "^3.6.2",
+    "password-validator": "^5.1.0",
+    "superagent": "^6.1.0"
+  }
+}
